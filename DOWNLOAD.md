@@ -42,7 +42,13 @@ Now, activate your `sra_get` conda environment. (If you had already activated it
 
 #### Download fastq files based on the run number 
 
-Now, we are ready to start the download using the `fasterq-dump` command. (This is the streamlined update of the original `fastq-dump` command, courtesy of those clever wags at NCBI.)
+Now, navigate into your class folder:
+```bash
+cd /proj/omics/env-bio/2025/users/mpachiadaki/ #for me
+#use your username instead
+```
+
+we are ready to start the download using the `fasterq-dump` command. (This is the streamlined update of the original `fastq-dump` command, courtesy of those clever wags at NCBI.)
 
 Use help to see your options:
 ```fasterq-dump -h```
