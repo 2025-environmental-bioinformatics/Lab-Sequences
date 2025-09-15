@@ -28,7 +28,7 @@ just like with `conda`; `mamba` works _exactly_ like `conda` does!
 
 ![Speedup gif from https://blog.hpc.qmul.ac.uk/mamba.html](https://github.com/2023-environmental-bioinformatics/Lab-Sequence_Quality/blob/main/libmamba_classic_comparison.gif)
 
-#### Request Poseidon resources for downloading
+### Request Poseidon resources for downloading
 
 Since we're not downloading a lot right now, we could go ahead and do it on Poseidon as-is. However, it's good HPC manners to request time and resources first. Let's do that interatively with an `srun` request (make sure you've navigated to the folder you cloned from GitHub for this).
 
