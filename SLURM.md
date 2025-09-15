@@ -139,7 +139,6 @@ scancel <JOB_NUMBER>
 2. [Cluster Cost Comparison](https://whoi-it.whoi.edu/hpc-cluster-cost-comparison/)
 3. [SLURM Rosetta Stone](https://slurm.schedmd.com/rosetta.pdf)
 4. [SLURM Official Docs](https://slurm.schedmd.com/)
-5. [Environment Modules Documentation](https://modules.readthedocs.io/en/latest/module.html)
 
 ```
 
