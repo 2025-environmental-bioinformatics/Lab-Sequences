@@ -55,9 +55,11 @@ Use help to see your options:
 
 The flags `-O` and `-split-3` are commonly used. `-O` lets you set the output directory (default is your current working directory).  `--split-3` is specific to **paired-end reads**, and will create two fastq files, one for the forward reads and the other for the reverse read. `--split-3` will check that each forward read has a reverse read mate, and will not download unpaired reads. `--split-reads` will split forward and reverse without running this check. In theory, all the reads **should** be paired in the raw data, but if they aren't then `--split-3` ensures downstream processing will go more smoothly.
 
-Now, let's all download the file with the accession number SRR8281009. (This is a transcriptome run from _Cymothoa exigua_, everybody's favorite fish tongue-replacing parasitic isopod.)
+Now, let's all download the file with the accession number SRR35355681. 
 
-```fasterq-dump --split-3 --verbose -O sra/ SRR8281009```
+```bash
+fasterq-dump --split-3 --verbose -O sra/ SRR35355681
+```
 
 Check out your new `sra` folder. How big is it? The `du` ("Disk Usage") command is handy for this. `-s` makes it give a summary size over all the files in the directory, and `-h` displays it in handy human-friendly M, G, etc (rather than thousands of bytes.)
 
