@@ -29,7 +29,7 @@ Let’s take a look at our particular HPC. Poseidon consists of the following:
 
 These are the *common* resources for every user of the HPC. In addition, there are purchased sets of nodes that are reserved for specific groups.
 
-👉 Type the command:
+👉 After you log into poseidon, type the command:
 
 ```bash
 sinfo
