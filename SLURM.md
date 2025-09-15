@@ -7,7 +7,7 @@ Generally, an HPC looks like this:
 
 ![Image from Software Carpentry](images/hpc_system_diagram.png)
 
-We have already used **SSH** to log in to the login nodes (`l1` and `l2`). However, using a batch system (aka **SLURM**) we can actually access the power of the HPC, which is in the **compute nodes**. To do this, we use SLURM.
+We have already used **SSH** to log in to poseidon. Poseidon has two login nodes (`l1` and `l2`). Your prompt indicates which one you are using. Login nodes can only be used for small jobs (such as the ones you used for HW1). However, using a batch system (aka **SLURM**) we can actually access the power of the HPC, which is in the **compute nodes**. To do this, we use SLURM.
 
 SLURM is a **Workload Manager** that helps users share computer resources. Poseidon is more than just the two login nodes we’ve been working on so far in class. It is actually a grouping of many computers whose shared use is controlled by SLURM (**Simple Linux Utility for Resource Management**). SLURM is broadly used across HPC systems and:
 
