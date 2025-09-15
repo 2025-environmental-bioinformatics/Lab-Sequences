@@ -32,7 +32,9 @@ just like with `conda`; `mamba` works _exactly_ like `conda` does!
 
 Since we're not downloading a lot right now, we could go ahead and do it on Poseidon as-is. However, it's good HPC manners to request time and resources first. Let's do that interatively with an `srun` request (make sure you've navigated to the folder you cloned from GitHub for this).
 
-```srun -p compute --time=1:00:00 --ntasks-per-node=1 --mem=8gb --pty bash```
+```bash
+srun -p compute --time=1:00:00 --ntasks-per-node=1 --mem=8gb --pty bash
+```
 
 Notice how your prompt changed once resources were assigned? `pn045` (or whatever) is the node that's been assigned to you for the next hour.
 
