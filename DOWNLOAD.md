@@ -6,7 +6,7 @@ Luckily, the SRA has its own command line toolkit `sra-tools` for retrieving dat
 
 ### Install sra-tools
 
-#### Using `conda`
+#### 1. Using `conda`
 First, we need to install `sra-tools` in a new conda environment. Let's create one called *sra_get* (or whatever you like!), activate it, and install `sra-tools`.
 
 ```
@@ -15,7 +15,7 @@ conda activate sra_get
 conda install -c bioconda sra-tools
 ```
 
-##### Using `mamba` to speed up downloads
+#### 2. Using `mamba` to speed up downloads
 If this is taking a long time, a great alternative is `mamba`. `mamba` is a reimplementation of `conda` (so it does the exact same thing as `conda`, it just uses a different route to do so). Using a magic combination of _parallelization_, `C++`, and much faster solving using an improved algorithm (`libsolv`), `mamba` resolves all of our package installation woes. Most packages should be quick to install with `mamba`. 
 
 ```
