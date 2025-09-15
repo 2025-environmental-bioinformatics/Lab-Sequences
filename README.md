@@ -4,6 +4,6 @@
 ## Today in class we will:
 
 
-4. [Introduction to Job submission with Slurm](https://github.com/environmental-bioinformatics-master/Sequences/blob/main/SLURM.md)
-3. [Downloading sequences from the SRA](SRA.md)
-7. [Lab on sequence quality](Quality.md)
+1. [Introduce Job submission with Slurm](https://github.com/environmental-bioinformatics-master/Sequences/blob/main/SLURM.md)
+2. [Download sequences from the SRA](SRA.md)
+3. [Dicuss and work on sequence quality](Quality.md)
