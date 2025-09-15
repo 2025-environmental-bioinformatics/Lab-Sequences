@@ -13,10 +13,10 @@ SLURM is a Workload Manager that helps users share computer resources. Posiedon 
 
 Let's take a look at our particular HPC. Poseidon consists of the following:
 
-*As a point of reference: Harriet's Mac has 8Gb of RAM and 2 cores.*
 
 - 2 login nodes for user access to the cluster via 10 Gb Ethernet
-- 77 compute nodes: 192GB RAM and 36 cores per node
+- 84 compute nodes: 192 or 256GB RAM and 36 or 48 cores per node
+- 
 - 1 shared memory node with 3TB RAM and 80 cores
 - 4 Nvidia Volta V100 GPUs connected via NVLINK installed in 1 node with 384GB RAM
 
