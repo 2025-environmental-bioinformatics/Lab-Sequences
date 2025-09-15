@@ -110,9 +110,13 @@ Now, check your job with:
 squeue
 ```
 
-You should see your name, job number, and the resources being used (this time, the `scavenger` queue).
+You should see your name, job number, and the resources being used (this time, the `scavenger` queue). If there are several jobs in the queue it will be challenging to find yours. To only see your jobs you can use the -u and your user name. For me, it is:
 
-Type:
+```bash
+squeue -u mpachiadaki
+```
+
+Now type:
 
 ```bash
 exit
@@ -120,9 +124,8 @@ exit
 
 to log off your interactive run and return to the login node.
 
-If you type `squeue` again, you should still see your job active.
 
-Cancel it with:
+Alternatively, you can cancel a job with:
 
 ```bash
 scancel <JOB_NUMBER>
