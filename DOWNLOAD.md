@@ -71,18 +71,17 @@ Now, navigate into your `sra` folder. Hopefully you have 2 files ending in `_1.f
 #### Download fastq files from large projects
 Downloads of data from large projects that contain numerous (and large) sequencing runs require a lot of time. For such downloads:
 
--go onto poseidon and navigate to your working folder
-
--start a screen session
-
--start a slurm job: e.g. 
+- go onto poseidon and navigate to your working folder
+  
+- start a screen session
+  
+- start a slurm job: e.g. 
 ```
 srun -p compute --time=24:00:00 --ntasks-per-node=1 --mem=8gb --pty bash
 ```
-
--activate your conda environment 
-
--use a for loop to download all the sequencing runs. I recommend modifying the command we learned above to produce compressed files: e.g. 
+- activate your conda environment
+  
+- use a for loop to download all the sequencing runs. I recommend modifying the command we learned above to produce compressed files: e.g. 
 ``` bash
 fastq-dump --split-files --gzip -O sra/ ${i} #${i} is your variable i.e. sra-id
 ```
@@ -91,17 +90,17 @@ fastq-dump --split-files --gzip -O sra/ ${i} #${i} is your variable i.e. sra-id
 
 There are also ways to parallelize the dowload (e.g. https://github.com/rvalieris/parallel-fastq-dump)
 
--go onto poseidon and navigate to your working folder
+- go onto poseidon and navigate to your working folder
 
--start a screen session
+- start a screen session
 
--start a slurm job: e.g. ```srun -p compute --time=24:00:00 --ntasks-per-node=4 --mem=8gb --pty bash``` *in this case you request 4 cores*
+- start a slurm job: e.g. ```srun -p compute --time=24:00:00 --ntasks-per-node=4 --mem=8gb --pty bash``` *in this case you request 4 cores*
 
--activate your conda environment
+- activate your conda environment
 
--conda install **parallel-fastq-dump**
+- conda install **parallel-fastq-dump**
 
--use a for loop to download all the sequencing runs using parallel-fastq-dump and taking advantage of the 4 cores you requested e.g. ```parallel-fastq-dump --s ${i} --threads 4 -O sra/ --split-files --gzip```
+- use a for loop to download all the sequencing runs using parallel-fastq-dump and taking advantage of the 4 cores you requested e.g. ```parallel-fastq-dump --s ${i} --threads 4 -O sra/ --split-files --gzip```
 
 
 ----------
