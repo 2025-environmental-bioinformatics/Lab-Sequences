@@ -18,15 +18,15 @@ https://en.wikipedia.org/wiki/FASTQ_format
 Let's go into your `sra` folder 
 
 ```bash
-cd /Lab-SequenceData/fastq
+#for me using the absolute path:
+cd /proj/omics/env-bio/2025/users/mpachiadaki/sra/
 ```
 
  and look at the contents of the folder
  
 
->View the first complete read (4 first lines) in one of the files our dataset.
+>View one of the files .
 
-In order to avoid uncompressing the files we will use a modification of the command above. Use zcat to view the compressed file and *pipe* the output into head
 
 
 | Line |Description| 
@@ -41,7 +41,7 @@ Line 4 shows the quality for each nucleotide in the read. Quality is interpreted
 
 Each quality score represents the probability that the corresponding nucleotide call is incorrect. This quality score is logarithmically based, so a quality score of 10 reflects a base call accuracy of 90%, but a quality score of 20 reflects a base call accuracy of 99%. These probability values are the results from the base calling algorithm and depend on how much signal was captured for the base incorporation.
 
->What is the last read in the set1_1.fastq file? How confident are you in this read?
+
 
 ## Assessing Quality using FastQC
 In real life, you won’t be assessing the quality of your reads by visually inspecting your FASTQ files. Rather, you’ll be using a software to assess read quality. We’ll use a program called FastQC to visualize the quality of our reads. 
@@ -59,17 +59,9 @@ FastQC can accept multiple file names as input, and on both zipped and unzipped 
 ```conda install -c bioconda fastqc```
 
 ### Execute
-Let's run fastqc for the four set  
-```fastqc set4*.fastq.gz```
+Let's run fastqc for the dataset we downloaded
+```fastqc *.fastq```
 For each input FASTQ file, FastQC has created a .zip file and a .html file. The .zip file extension indicates that this is actually a compressed set of multiple output files. We’ll be working with these output files soon. The .html file is a stable webpage displaying the summary report for each of our samples.
-
->We want to keep our data files and our results files separate, so move these output files into a new directory within our results/ directory.
-
-```mkdir fastqc_results```
- ```mv *.zip fastqc_results```
- ```mv *.html fastqc_results```
-
-```cd fastqc_results```
 
 
 ### View the FastQC results
@@ -77,15 +69,18 @@ If we were working on our local computers, we’d be able to display each of the
 
 To transfer a file from a remote server to our own machines, we will use *scp*, which we briefly mentioned during the previous lessons.
 
-First we will make a new directory on our computer to store the HTML files we’re transferring. Let’s put it on our desktop for now. Open a new tab in your terminal program and make a directory:
+First we will make a new directory on our computer to store the HTML files we’re transferring. Let’s put it on our desktop for now. Open a new tab in your local terminal and make a directory:
 
 ```mkdir ~/Desktop/fastqc_html```
 
 then initiate the tranfer:
 
-```scp username@poseidon.whoi.edu:/vortexfs1/omics/env-bio/users/username/Lab-SequenceData/fastq/fastqc_results/*html ~/Desktop/fastqc_html```
+```bash
+#for me; adjust your username
+scp  'mpachiadaki@poseidon.whoi.edu:/proj/omics/env-bio/2025/users/mpachiadaki/sra/*.html' ~/Desktop/fastqc_html
+```
 
-Now we can go to our new directory and open the HTML files: *set4_1_fastqc.html* and *set4_2_fastqc.html*
+Now we can go to our new directory and open the HTML files
 
 The x-axis displays the base position in the read, and the y-axis shows quality scores. In this example, the sample contains reads that are 150 bp long. For each position, there is a box-and-whisker plot showing the distribution of quality scores for all reads at that position. The horizontal red line indicates the median quality score and the yellow box shows the 2nd to 3rd quartile range. This means that 50% of reads have a quality score that falls within the range of the yellow box at that position. The whiskers show the range to the 1st and 4th quartile.
 
