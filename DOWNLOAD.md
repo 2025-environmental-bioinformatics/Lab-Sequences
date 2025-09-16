@@ -50,7 +50,9 @@ cd /proj/omics/env-bio/2025/users/mpachiadaki/ #for me; use your username instea
 we are ready to start the download using the `fasterq-dump` command. (This is the streamlined update of the original `fastq-dump` command, courtesy of those clever wags at NCBI.)
 
 Use help to see your options:
-```fasterq-dump -h```
+```bash
+fasterq-dump -h
+```
 
 The flags `-O` and `-split-3` are commonly used. `-O` lets you set the output directory (default is your current working directory).  `--split-3` is specific to **paired-end reads**, and will create two fastq files, one for the forward reads and the other for the reverse read. `--split-3` will check that each forward read has a reverse read mate, and will not download unpaired reads. `--split-reads` will split forward and reverse without running this check. In theory, all the reads **should** be paired in the raw data, but if they aren't then `--split-3` ensures downstream processing will go more smoothly.
 
@@ -73,11 +75,17 @@ Downloads of data from large projects that contain numerous (and large) sequenci
 
 -start a screen session
 
--start a slurm job: e.g. ```srun -p compute --time=24:00:00 --ntasks-per-node=1 --mem=8gb --pty bash```
+-start a slurm job: e.g. 
+```
+srun -p compute --time=24:00:00 --ntasks-per-node=1 --mem=8gb --pty bash
+```
 
--activate your conda environment (I called mine downloading)
+-activate your conda environment 
 
--use a for loop to download all the sequencing runs. I recommend modifying the command we learned above to produce compressed files: e.g. ```fastq-dump --split-files --gzip -O sra/ ${i}``` [${i} is your variable i.e. sra-id]
+-use a for loop to download all the sequencing runs. I recommend modifying the command we learned above to produce compressed files: e.g. 
+``` bash
+fastq-dump --split-files --gzip -O sra/ ${i} #${i} is your variable i.e. sra-id
+```
 
 
 
