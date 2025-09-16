@@ -60,25 +60,36 @@ screen -X -S mysession quit
 2. Start a screen session:
 
    ```bash
-   screen -S alignment
+   screen -S download
    ```
 
-3. Run your long-running command, e.g.:
+3.(optional) Start a new interactive session, e.g.:
+   ```bash
+   srun -p compute --time=24:00:00 --ntasks-per-node=1 --mem=8gb --pty bash
+   ```
+4. Run your long-running command, e.g.:
 
    ```bash
-   bowtie2 -x genome_index -U reads.fq -S output.sam
+   fastq-dump --split-files --gzip -O sra/ ${i} #${i} is your variable i.e. sra-id
    ```
 
-4. Detach safely (`Ctrl + A, D`) and log out.
+5. Detach safely (`Ctrl + A, D`) and log out.
 
-5. Later, log back in and reattach:
+6. Later, log back in and reattach:
 
    ```bash
-   screen -r alignment
+   screen -r download
    ```
 
 ---
+### GNU Screen – Recommended Resources
 
+- [Devhints – Screen Cheatsheet](https://devhints.io/screen?utm_source=chatgpt.com)  
+- [Quickref.me – Screen Command Quick Reference](https://quickref.me/screen.html?utm_source=chatgpt.com)  
+- [Jeff Kayser – Screen Keybindings Cheatsheet](https://jeffkayser.com/projects/cheatsheet-screen/index.html?utm_source=chatgpt.com)  
+- [GitHub Gist – Screen Cheatsheet by jctosta](https://gist.github.com/jctosta/af918e1618682638aa82?utm_source=chatgpt.com)  
+
+---
 ## Tips
 
 * Use **descriptive names** with `-S` so you can easily identify sessions.
@@ -89,7 +100,4 @@ screen -X -S mysession quit
 
 ✅ With `screen`, you never have to worry about losing progress on long HPC jobs again!
 
-```
 
-Would you like me to also include a **section comparing `screen` vs `tmux`** so students know why one might be preferable?
-```
