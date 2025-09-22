@@ -56,7 +56,11 @@ FastQC can accept multiple file names as input, and on both zipped and unzipped 
 
 ### Install Fastqc
 
-```conda install -c bioconda fastqc```
+```bash
+mamba create -n fastqc
+mamba activate fastqc
+mamba install -c bioconda fastqc
+```
 
 ### Execute
 Let's run fastqc for the dataset we downloaded
