@@ -125,7 +125,12 @@ We will use a program called Trimmomatic to filter poor quality reads and trim p
 http://www.usadellab.org/cms/index.php?page=trimmomatic
 http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf
 
-To install ```conda install -c bioconda trimmomatic```
+To install 
+```
+mamba create -n trimmomatic
+mamba activate trimmomatic
+mamba install -c bioconda trimmomatic
+```
 
 ### Trimmomatic Options
 Trimmomatic has a variety of options to trim your reads. If we run the command, we can see some of our options
