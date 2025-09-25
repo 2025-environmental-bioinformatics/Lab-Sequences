@@ -162,6 +162,13 @@ We will use only a few of these options and trimming steps in our analysis. It i
 
 Let's try to trim the first set of sequences
 
+Make sure that you have initiated an `srun`
+
+```
+srun -p compute --time=1:00:00 --ntasks-per-node=1 --mem=8gb --pty bash
+```
+then load your conda environment and submit your job
+
 ```trimmomatic PE -threads 4 SRR35355681_1.fastq SRR35355681_2.fastq SRR35355681paired_1.fastq SRR35355681unpaired_1.fastq.gz SRR35355681paired_2.fastq.gz SRR35355681unpaired_2.fastq.gz SLIDINGWINDOW:4:25 TRAILING:20 MINLEN:75```
 
 > How many pairs survived?
