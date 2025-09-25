@@ -65,7 +65,7 @@ mamba install -c bioconda fastqc
 ### Execute
 Let's run fastqc for the dataset we downloaded
 ```fastqc *.fastq```
-For each input FASTQ file, FastQC has created a .zip file and a .html file. The .zip file extension indicates that this is actually a compressed set of multiple output files. We’ll be working with these output files soon. The .html file is a stable webpage displaying the summary report for each of our samples.
+For each input FASTQ file, FastQC has created a .zip file and a .html file. The .zip file extension indicates that this is actually a compressed set of multiple output files that we do not need to look individually. The .html file is a stable webpage displaying the summary report for each of our samples.
 
 
 ### View the FastQC results
@@ -95,7 +95,7 @@ The x-axis displays the base position in the read, and the y-axis shows quality 
 
 
 ### Decoding the other FastQC outputs
-We’ve now looked at quite a few “Per base sequence quality” FastQC graphs, but there are nine other graphs that we haven’t talked about! Below we have provided a brief overview of interpretations for each of these plots. For more information, please see the FastQC documentation here
+We’ve now looked at the “Per base sequence quality” FastQC graphs, but there are nine other graphs that we haven’t talked about! Below we have provided a brief overview of interpretations for each of these plots. For more information, please see the FastQC documentation here
 
 >**Per tile sequence quality:** the machines that perform sequencing are divided into tiles. This plot displays patterns in base quality along these tiles. Consistently low scores are often found around the edges, but hot spots can also occur in the middle if an air bubble was introduced at some point during the run.
 >
